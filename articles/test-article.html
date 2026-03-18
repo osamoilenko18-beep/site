@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+
+    <title>??????? ?????? ? ??????? ?????????? ?????????</title>
+    <meta name="description" content="?? ???????? ????">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b1220">
+
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+
+    <link rel="canonical" href="https://osamoilenko.com/articles/test-article.html">
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="??????? ??????">
+    <meta property="og:description" content="?? ???????? ????">
+    <meta property="og:url" content="https://osamoilenko.com/articles/test-article.html">
+    <meta property="og:image" content="https://osamoilenko.com/images/og-cover.jpg">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+<a href="../index.html" class="site-logo">
+    <img src="../images/emblem.png" alt="??????? ?????????? ?????????">
+</a>
+
+<button class="menu-toggle">?</button>
+
+<nav>
+    <a href="../index.html">???????</a> |
+    <a href="../sudove-predstavnytstvo.html">?????? ??????????????</a> |
+    <a href="../hospodarski-spory.html">???????????? ?????</a> |
+    <a href="../rozluchennia.html">??????????</a> |
+    <a href="../podil-maina.html">????? ?????</a> |
+    <a href="../alimenty.html">????????</a> |
+    <a href="index.html" class="active">??????</a> |
+    <a href="../kontakty.html">????????</a>
+</nav>
+</header>
+
+<main>
+
+<section>
+
+    <a href="index.html" class="back-link">? ?? ???? ??????</a>
+
+    <h1>??????? ??????</h1>
+
+    <div class="article-content">
+        <p>?? ??????? ??????.</p>
+<h2>????????????</h2>
+<p>?????? ????? ??????.</p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p><strong>??????? ?????????? ?????????</strong></p>
+
+    <p>
+        ???????: <a href="tel:&#43;380981079954">+38 098 107 99 54</a><br>
+        ???? / ???????
+    </p>
+
+    <p class="footer-nav">
+        <a href="../index.html">???????</a> |
+        <a href="../sudove-predstavnytstvo.html">?????? ??????????????</a> |
+        <a href="../hospodarski-spory.html">???????????? ?????</a> |
+        <a href="../rozluchennia.html">??????????</a> |
+        <a href="../podil-maina.html">????? ?????</a> |
+        <a href="../alimenty.html">????????</a> |
+        <a href="index.html">??????</a> |
+        <a href="../kontakty.html">????????</a>
+    </p>
+
+    <p class="footer-legal">
+        <a href="../privacy-policy.html" target="_blank">???????? ????????????????</a>
+    </p>
+
+    <p class="footer-copy">2026. ??? ????? ????????.</p>
+</footer>
+
+
+<button class="scroll-top" id="scrollTop" aria-label="?????????? ???????? ?????">
+    <span class="scroll-top-arrow">?</span>
+    <span class="scroll-top-text">?????</span>
+</button>
+
+<script>
+(function () {
+    const button = document.getElementById('scrollTop');
+    if (!button) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            button.classList.add('show');
+        } else {
+            button.classList.remove('show');
+        }
+    });
+
+    button.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+</script>
+
+
+<div class="floating-contact">
+
+    <button class="floating-main">?</button>
+
+    <div class="floating-menu">
+
+        <a href="tel:&#43;380981079954" class="floating-item">
+           <img src="../images/phone.png">
+           <span>+38 098 107 99 54</span>
+        </a>
+
+        <a href="https://t.me/&#43;380981079954" target="_blank" class="floating-item">
+            <img src="../images/telegram.png">
+            <span>Telegram</span>
+        </a>
+
+        <a href="viber://chat?number=%2B380981079954" class="floating-item">
+            <img src="../images/viber.png">
+            <span>Viber</span>
+        </a>
+
+        <a href="https://wa.me/380981079954" target="_blank" class="floating-item">
+            <img src="../images/whatsapp.png">
+            <span>WhatsApp</span>
+        </a>
+
+        <a href="../kontakty.html#zvernennia" class="floating-item">
+            <img src="../images/form.png">
+            <span>?????</span>
+        </a>
+
+    </div>
+</div>
+
+
+<script>
+document.querySelector('.floating-main')?.addEventListener('click', e=>{
+    e.stopPropagation();
+    document.querySelector('.floating-contact').classList.toggle('open');
+});
+document.addEventListener('click', ()=> {
+    document.querySelector('.floating-contact')?.classList.remove('open');
+});
+</script>
+
+
+<div id="cookieOverlay" class="cookie-bar">
+    <div class="cookie-box">
+        <h2>???????????? ?????? cookie</h2>
+        <p>???? ???????????? cookie ??? ?????? ?? ?????????.</p>
+
+        <div class="cookie-actions">
+            <button id="cookieAccept">????????</button>
+            <button id="cookieReject">?????????</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/cookie.js"></script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    header?.classList.add('header-visible');
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
+
+    toggle?.addEventListener('click', function (e) {
+        e.stopPropagation();
+        nav.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function () {
+        nav?.classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>
