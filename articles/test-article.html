@@ -10,18 +10,6 @@
     <meta name="theme-color" content="#0b1220">
 
     <link rel="icon" href="../images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
-
-    <link rel="canonical" href="https://osamoilenko18-beep.github.io/site/articles/test-article.html">
-
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Тестова стаття">
-    <meta property="og:description" content="Це тестовий опис">
-    <meta property="og:url" content="https://osamoilenko.com/articles/test-article.html">
-    <meta property="og:image" content="https://osamoilenko.com/images/og-cover.jpg">
-
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -47,7 +35,6 @@
 </header>
 
 <main>
-
 <section>
 
     <a href="index.html" class="back-link">← До всіх статей</a>
@@ -61,7 +48,6 @@
     </div>
 
 </section>
-
 </main>
 
 <footer>
@@ -84,7 +70,9 @@
     </p>
 
     <p class="footer-legal">
-        <a href="../privacy-policy.html" target="_blank">Політика конфіденційності</a>
+        <a href="../privacy-policy.html" target="_blank" rel="noopener noreferrer">
+            Політика конфіденційності
+        </a>
     </p>
 
     <p class="footer-copy">2026. Всі права захищені.</p>
@@ -102,18 +90,12 @@
     if (!button) return;
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            button.classList.add('show');
-        } else {
-            button.classList.remove('show');
-        }
+        if (window.scrollY > 300) button.classList.add('show');
+        else button.classList.remove('show');
     });
 
     button.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 })();
 </script>
@@ -121,16 +103,18 @@
 
 <div class="floating-contact">
 
-    <button class="floating-main">☎</button>
+    <button class="floating-main" id="contactToggle" aria-label="Контакти">
+        ☎
+    </button>
 
-    <div class="floating-menu">
+    <div class="floating-menu" id="contactMenu">
 
         <a href="tel:&#43;380981079954" class="floating-item">
            <img src="../images/phone.png">
            <span>+38 098 107 99 54</span>
         </a>
 
-        <a href="https://t.me/&#43;380981079954" target="_blank" class="floating-item">
+        <a href="https://t.me/&#43;380981079954" target="_blank" rel="noopener noreferrer" class="floating-item">
             <img src="../images/telegram.png">
             <span>Telegram</span>
         </a>
@@ -140,35 +124,35 @@
             <span>Viber</span>
         </a>
 
-        <a href="https://wa.me/380981079954" target="_blank" class="floating-item">
+        <a href="https://wa.me/380981079954" target="_blank" rel="noopener noreferrer" class="floating-item">
             <img src="../images/whatsapp.png">
             <span>WhatsApp</span>
         </a>
 
         <a href="../kontakty.html#zvernennia" class="floating-item">
             <img src="../images/form.png">
-            <span>Форма</span>
+            <span>Форма зворотного зв’язку</span>
         </a>
 
     </div>
+
 </div>
 
 
-<script>
-document.querySelector('.floating-main')?.addEventListener('click', e=>{
-    e.stopPropagation();
-    document.querySelector('.floating-contact').classList.toggle('open');
-});
-document.addEventListener('click', ()=> {
-    document.querySelector('.floating-contact')?.classList.remove('open');
-});
-</script>
-
-
-<div id="cookieOverlay" class="cookie-bar">
+<div id="cookieOverlay" class="cookie-bar" role="region" aria-label="Cookie consent">
     <div class="cookie-box">
         <h2>Використання файлів cookie</h2>
-        <p>Сайт використовує cookie для роботи та аналітики.</p>
+        <p>
+            Цей сайт використовує файли cookie, необхідні для коректної роботи,
+            а також може використовувати аналітичні та маркетингові cookie
+            за умови вашої згоди.
+        </p>
+        <p>
+            Детальніше у 
+            <a href="../privacy-policy.html" target="_blank" rel="noopener noreferrer">
+                Політиці конфіденційності
+            </a>.
+        </p>
 
         <div class="cookie-actions">
             <button id="cookieAccept">Прийняти</button>
@@ -182,18 +166,17 @@ document.addEventListener('click', ()=> {
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
-    header?.classList.add('header-visible');
+    document.querySelector('header')?.classList.add('header-visible');
 
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
 
-    toggle?.addEventListener('click', function (e) {
+    toggle?.addEventListener('click', e => {
         e.stopPropagation();
         nav.classList.toggle('open');
     });
 
-    document.addEventListener('click', function () {
+    document.addEventListener('click', () => {
         nav?.classList.remove('open');
     });
 });
