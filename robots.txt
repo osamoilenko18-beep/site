@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /send.php
+
+Sitemap: https://osamoilenko.com/sitemap.xml
